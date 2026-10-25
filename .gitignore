@@ -46,3 +46,8 @@ desktop.ini
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Temporary local backups
+code/main_pre_phase2.py
+*.bak
+

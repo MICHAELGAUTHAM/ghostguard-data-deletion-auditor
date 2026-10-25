@@ -25,17 +25,32 @@ Start your AI coding tool from the **repository root** so it automatically reads
 
 Build your solution in `code/main.py`, or use another language and document its setup and run command clearly in your README.
 
+### GhostGuard Autonomous Engine Commands
+
+GhostGuard provides a zero-dependency, 100% deterministic first-principles deletion auditor:
+
+```bash
+# 1. Run the official 32 sample case evaluation
+python code/main.py sample
+
+# 2. Run the production pipeline across all 518 cases (writes root output.csv)
+python code/main.py run
+
+# 3. Validate root output.csv against all contract and schema rules
+python code/validate_output.py
+
+# 4. Run the independent pytest test suite (6 edge cases)
+python -m pytest -v tests/test_audit_engine.py
+
+# 5. Display evaluation and usage reports
+python code/evaluation/main.py
+```
+
 Your solution must:
 
 - Read the input files from `dataset/`
 - Generate one prediction row for every request in `dataset/deletion_requests.csv`
 - Write the final predictions to `output.csv` in the repository root
-
-Run the starter Python entry point with:
-
-```bash
-python3 code/main.py
-```
 
 The blank template at `dataset/output.csv` is provided as a reference. Your final generated file for submission must be the root-level `output.csv`.
 
